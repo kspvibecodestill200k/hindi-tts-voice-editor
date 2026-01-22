@@ -192,7 +192,7 @@ function generateAudio() {
         console.log('Generated SSML:', ssml);
 
         // Send to backend API
-        fetch('/api/generate-audio', {
+        fetch('https://hindi-tts-voice-editor.onrender.com/api/generate-audio', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
