@@ -1,0 +1,160 @@
+{
+  "project": {
+    "name": "Hindi TTS Voice Samples Gallery",
+    "version": "1.0.0",
+    "description": "A comprehensive showcase of Hindi text-to-speech voices from multiple providers",
+    "author": "ACCIO",
+    "created": "2026-01-23"
+  },
+  "providers": [
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "website": "https://elevenlabs.io",
+      "apiDocs": "https://elevenlabs.io/docs/api-reference",
+      "description": "Premium text-to-speech with natural voices",
+      "voices": [
+        {
+          "id": "adarsh",
+          "name": "Adarsh",
+          "gender": "Male",
+          "characteristics": ["Professional", "Deep", "Authoritative"],
+          "sampleFile": "elevenlabs-adarsh.mp3"
+        },
+        {
+          "id": "priya",
+          "name": "Priya",
+          "gender": "Female",
+          "characteristics": ["Friendly", "Warm", "Natural"],
+          "sampleFile": "elevenlabs-priya.mp3"
+        },
+        {
+          "id": "akshay",
+          "name": "Akshay",
+          "gender": "Male",
+          "characteristics": ["Young", "Energetic", "Dynamic"],
+          "sampleFile": "elevenlabs-akshay.mp3"
+        }
+      ]
+    },
+    {
+      "id": "sarvam",
+      "name": "Sarvam AI",
+      "website": "https://sarvam.ai",
+      "apiDocs": "https://docs.sarvam.ai",
+      "description": "Indian AI company with localized Hindi support",
+      "voices": [
+        {
+          "id": "ravi",
+          "name": "Ravi",
+          "gender": "Male",
+          "characteristics": ["Clear", "Standard", "Professional"],
+          "sampleFile": "sarvam-ravi.mp3"
+        },
+        {
+          "id": "anjali",
+          "name": "Anjali",
+          "gender": "Female",
+          "characteristics": ["Articulate", "Pleasant", "Clear"],
+          "sampleFile": "sarvam-anjali.mp3"
+        },
+        {
+          "id": "vijay",
+          "name": "Vijay",
+          "gender": "Male",
+          "characteristics": ["Narrator", "Professional", "Expressive"],
+          "sampleFile": "sarvam-vijay.mp3"
+        }
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google Cloud Text-to-Speech",
+      "website": "https://cloud.google.com/text-to-speech",
+      "apiDocs": "https://cloud.google.com/text-to-speech/docs",
+      "description": "Enterprise-grade voices with advanced features",
+      "voices": [
+        {
+          "id": "neural-male",
+          "name": "Neural - Male",
+          "gender": "Male",
+          "characteristics": ["Neural", "Advanced", "Natural"],
+          "sampleFile": "google-neural-male.mp3"
+        },
+        {
+          "id": "neural-female",
+          "name": "Neural - Female",
+          "gender": "Female",
+          "characteristics": ["Neural", "Advanced", "Expressive"],
+          "sampleFile": "google-neural-female.mp3"
+        },
+        {
+          "id": "child",
+          "name": "Standard - Child",
+          "gender": "Child",
+          "characteristics": ["Child", "Standard", "Friendly"],
+          "sampleFile": "google-child.mp3"
+        }
+      ]
+    },
+    {
+      "id": "azure",
+      "name": "Microsoft Azure Speech",
+      "website": "https://azure.microsoft.com/services/cognitive-services/text-to-speech",
+      "apiDocs": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/",
+      "description": "Multi-regional deployment with high availability",
+      "voices": [
+        {
+          "id": "hari",
+          "name": "Hari",
+          "gender": "Male",
+          "characteristics": ["Business", "Reliable", "Professional"],
+          "sampleFile": "azure-hari.mp3"
+        },
+        {
+          "id": "ananya",
+          "name": "Ananya",
+          "gender": "Female",
+          "characteristics": ["Natural", "Friendly", "Warm"],
+          "sampleFile": "azure-ananya.mp3"
+        },
+        {
+          "id": "karan",
+          "name": "Karan",
+          "gender": "Male",
+          "characteristics": ["Premium", "Emotional", "Expressive"],
+          "sampleFile": "azure-karan.mp3"
+        }
+      ]
+    }
+  ],
+  "features": [
+    "Multi-provider voice gallery",
+    "Voice comparison tools",
+    "Interactive filtering",
+    "Responsive design",
+    "Keyboard shortcuts",
+    "Accessibility support",
+    "Provider information",
+    "Voice characteristics tagging"
+  ],
+  "integrationGuide": {
+    "elevenlabs": {
+      "authRequired": true,
+      "pythonExample": "pip install elevenlabs",
+      "nodeExample": "npm install elevenlabs"
+    },
+    "sarvam": {
+      "authRequired": true,
+      "apiEndpoint": "https://api.sarvam.ai/tts"
+    },
+    "google": {
+      "authRequired": true,
+      "pythonExample": "pip install google-cloud-texttospeech"
+    },
+    "azure": {
+      "authRequired": true,
+      "pythonExample": "pip install azure-cognitiveservices-speech"
+    }
+  }
+}

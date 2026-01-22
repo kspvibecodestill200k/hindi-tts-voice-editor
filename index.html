@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi TTS Voice Samples - AI Voice Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎙️ Hi Abhilasha</h1>
+            <p class="tagline">I have collected all the ache wale Hindi Text-to-Speech service providers on this website</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#all" onclick="filterProvider('all')">All Samples</a></li>
+                <li><a href="#elevenlabs" onclick="filterProvider('elevenlabs')">ElevenLabs</a></li>
+                <li><a href="#sarvam" onclick="filterProvider('sarvam')">Sarvam AI</a></li>
+                <li><a href="#google" onclick="filterProvider('google')">Google Cloud</a></li>
+                <li><a href="#azure" onclick="filterProvider('azure')">Azure</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Voice Editor Modal -->
+        <div id="editorModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Edit Text for <span id="selectedVoiceName"></span></h2>
+                    <button class="close-btn" onclick="closeEditor()">&times;</button>
+                </div>
+
+                <div class="editor-container">
+                    <div class="text-editor-section">
+                        <div class="editor-toolbar">
+                            <label>File Upload:</label>
+                            <input type="file" id="fileUpload" accept=".txt,.doc,.docx" onchange="handleFileUpload()">
+                        </div>
+
+                        <textarea id="editorText" placeholder="Enter sample text to hear all the voices..."></textarea>
+
+                        <div class="editor-actions">
+                            <button class="action-btn" onclick="generateAudio()">Generate Audio</button>
+                            <button class="action-btn secondary" onclick="closeEditor()">Back to Samples</button>
+                        </div>
+                    </div>
+
+                    <div class="voice-effects-section">
+                        <h3>Voice Effects</h3>
+                        <button class="effect-btn" onclick="insertEffect('pause')" title="Add pause">⏸ Pause</button>
+                        <button class="effect-btn" onclick="insertEffect('emphasize')" title="Emphasize text">📢 Emphasize</button>
+                        <button class="effect-btn" onclick="insertEffect('whisper')" title="Whisper voice">🤫 Whisper</button>
+                        <button class="effect-btn" onclick="insertEffect('shocking')" title="Shocking tone">😲 Shocking</button>
+                    </div>
+                </div>
+
+                <div class="audio-preview">
+                    <h3>Preview:</h3>
+                    <audio id="previewAudio" controls></audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- ElevenLabs Section -->
+        <section class="provider-section" data-provider="elevenlabs">
+            <div class="section-header">
+                <h2>🎭 ElevenLabs</h2>
+                <p class="provider-desc">High-quality, natural-sounding voices with realistic intonation</p>
+            </div>
+            <div class="voice-grid">
+                <div class="voice-card" onclick="selectVoice('adarsh', 'Adarsh - Male Voice')">
+                    <h3>Adarsh - Male Voice</h3>
+                    <p class="voice-desc">Deep, professional male voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/elevenlabs-adarsh.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Professional</span>
+                        <span class="tag">Deep</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('priya', 'Priya - Female Voice')">
+                    <h3>Priya - Female Voice</h3>
+                    <p class="voice-desc">Warm, friendly female voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/elevenlabs-priya.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Friendly</span>
+                        <span class="tag">Natural</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('akshay', 'Akshay - Young Male')">
+                    <h3>Akshay - Young Male</h3>
+                    <p class="voice-desc">Energetic, youthful male voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/elevenlabs-akshay.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Energetic</span>
+                        <span class="tag">Young</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sarvam AI Section -->
+        <section class="provider-section" data-provider="sarvam">
+            <div class="section-header">
+                <h2>🚀 Sarvam AI</h2>
+                <p class="provider-desc">Indian AI company with localized Hindi voice synthesis</p>
+            </div>
+            <div class="voice-grid">
+                <div class="voice-card" onclick="selectVoice('ravi', 'Ravi - Standard Male')">
+                    <h3>Ravi - Standard Male</h3>
+                    <p class="voice-desc">Clear, standard male voice for general use</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/sarvam-ravi.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Clear</span>
+                        <span class="tag">Standard</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('anjali', 'Anjali - Standard Female')">
+                    <h3>Anjali - Standard Female</h3>
+                    <p class="voice-desc">Pleasant, articulate female voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/sarvam-anjali.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Pleasant</span>
+                        <span class="tag">Articulate</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('vijay', 'Vijay - Narrator')">
+                    <h3>Vijay - Narrator</h3>
+                    <p class="voice-desc">Professional narrator voice for stories and content</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/sarvam-vijay.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Narrator</span>
+                        <span class="tag">Professional</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Cloud Section -->
+        <section class="provider-section" data-provider="google">
+            <div class="section-header">
+                <h2>☁️ Google Cloud Text-to-Speech</h2>
+                <p class="provider-desc">Enterprise-grade voices with advanced features</p>
+            </div>
+            <div class="voice-grid">
+                <div class="voice-card" onclick="selectVoice('google-neural-male', 'Google Neural - Male')">
+                    <h3>Neural - Male</h3>
+                    <p class="voice-desc">Advanced neural voice for male speakers</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/google-neural-male.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Neural</span>
+                        <span class="tag">Advanced</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('google-neural-female', 'Google Neural - Female')">
+                    <h3>Neural - Female</h3>
+                    <p class="voice-desc">Advanced neural voice for female speakers</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/google-neural-female.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Neural</span>
+                        <span class="tag">Advanced</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('google-child', 'Google Standard - Child')">
+                    <h3>Standard - Child</h3>
+                    <p class="voice-desc">Child-appropriate voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/google-child.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Child</span>
+                        <span class="tag">Standard</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Azure Section -->
+        <section class="provider-section" data-provider="azure">
+            <div class="section-header">
+                <h2>💙 Microsoft Azure</h2>
+                <p class="provider-desc">Multi-regional deployment with high availability</p>
+            </div>
+            <div class="voice-grid">
+                <div class="voice-card" onclick="selectVoice('hari', 'Hari - Male')">
+                    <h3>Hari - Male</h3>
+                    <p class="voice-desc">Reliable male voice for business applications</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/azure-hari.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Business</span>
+                        <span class="tag">Reliable</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('ananya', 'Ananya - Female')">
+                    <h3>Ananya - Female</h3>
+                    <p class="voice-desc">Natural-sounding female voice</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/azure-ananya.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Natural</span>
+                        <span class="tag">Friendly</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+
+                <div class="voice-card" onclick="selectVoice('karan', 'Karan - Premium')">
+                    <h3>Karan - Premium</h3>
+                    <p class="voice-desc">Premium quality voice with emotional expression</p>
+                    <div class="player">
+                        <audio controls>
+                            <source src="samples/azure-karan.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="voice-tags">
+                        <span class="tag">Premium</span>
+                        <span class="tag">Emotional</span>
+                    </div>
+                    <button class="select-btn">Select & Edit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison-section">
+            <h2>Provider Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Quality</th>
+                        <th>Hindi Support</th>
+                        <th>Use Case</th>
+                        <th>Pricing Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ElevenLabs</strong></td>
+                        <td>Premium</td>
+                        <td>Excellent</td>
+                        <td>Commercial/Professional</td>
+                        <td>Pay-as-you-go</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sarvam AI</strong></td>
+                        <td>Very Good</td>
+                        <td>Native</td>
+                        <td>Localized Content</td>
+                        <td>API-based</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Cloud</strong></td>
+                        <td>Excellent</td>
+                        <td>Very Good</td>
+                        <td>Enterprise</td>
+                        <td>Per character</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Azure</strong></td>
+                        <td>Excellent</td>
+                        <td>Very Good</td>
+                        <td>Enterprise</td>
+                        <td>Subscription</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Hindi TTS Voice Samples Gallery. All samples are for demonstration purposes.</p>
+            <p>Visit the official websites for API access and integration options.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
