@@ -1,3 +1,11 @@
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 // Filter providers based on selection
 function filterProvider(provider) {
     const sections = document.querySelectorAll('.provider-section');

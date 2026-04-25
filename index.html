@@ -7,14 +7,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
         <div class="container">
-            <h1 class="logo">Hi Abhilasha</h1>
-            <p class="tagline">I have collected all the ache wale Hindi Text-to-Speech service providers on this website</p>
+            <ul class="top-nav-links">
+                <li><a href="#voice-gallery" onclick="scrollToSection('voice-gallery')">Voice Gallery</a></li>
+                <li><a href="#technical-architecture" onclick="scrollToSection('technical-architecture')">Technical Architecture</a></li>
+                <li><a href="#pricing" onclick="scrollToSection('pricing')">Pricing</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Navigation removed - scroll to see all providers -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hindi Text-to-Speech Voice Gallery</h1>
+                <p class="hero-subtitle">Explore AI-powered voices from leading TTS providers. Edit, customize, and generate professional Hindi audio in seconds.</p>
+                <div class="hero-buttons">
+                    <button class="hero-btn primary" onclick="scrollToSection('voice-gallery')">Explore Voices</button>
+                    <button class="hero-btn secondary" onclick="scrollToSection('technical-architecture')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section 
+    <section class="welcome-section">
+        <div class="container">
+            <h2 class="welcome-title">Hi Abhilasha</h2>
+            <p class="welcome-subtitle">I have collected all the ache wale Hindi Text-to-Speech service providers on this website</p>
+        </div>
+    </section> -->
 
     <main class="container">
         <!-- Voice Editor Modal -->
@@ -56,11 +81,18 @@
             </div>
         </div>
 
+        <!-- Voice Gallery Section -->
+        <section id="voice-gallery" class="content-section">
+            <div class="section-title">
+                <h2>Voice Gallery</h2>
+                <p>Select any voice to edit and generate custom audio with voice effects</p>
+            </div>
+
         <!-- ElevenLabs Section -->
         <section class="provider-section" data-provider="elevenlabs">
             <div class="section-header">
-                <h2>🎭 ElevenLabs</h2>
-                <p class="provider-desc">High-quality, natural-sounding voices with realistic intonation</p>
+                <h2>ElevenLabs</h2>
+                <p class="provider-desc">High-quality, natural-sounding voices with realistic intonation and advanced voice customization</p>
             </div>
             <div class="voice-grid">
                 <div class="voice-card" onclick="selectVoice('adarsh', 'Adarsh - Male Voice')">
@@ -116,8 +148,8 @@
         <!-- Sarvam AI Section -->
         <section class="provider-section" data-provider="sarvam">
             <div class="section-header">
-                <h2>🚀 Sarvam AI</h2>
-                <p class="provider-desc">Indian AI company with localized Hindi voice synthesis</p>
+                <h2>Sarvam AI</h2>
+                <p class="provider-desc">Indian AI company with localized Hindi voice synthesis optimized for Indian languages</p>
             </div>
             <div class="voice-grid">
                 <div class="voice-card" onclick="selectVoice('ravi', 'Ravi - Standard Male')">
@@ -173,8 +205,8 @@
         <!-- Google Cloud Section -->
         <section class="provider-section" data-provider="google">
             <div class="section-header">
-                <h2>☁️ Google Cloud Text-to-Speech</h2>
-                <p class="provider-desc">Enterprise-grade voices with advanced features</p>
+                <h2>Google Cloud Text-to-Speech</h2>
+                <p class="provider-desc">Enterprise-grade voices with advanced features and WaveNet technology</p>
             </div>
             <div class="voice-grid">
                 <div class="voice-card" onclick="selectVoice('google-neural-male', 'Google Neural - Male')">
@@ -230,8 +262,8 @@
         <!-- Azure Section -->
         <section class="provider-section" data-provider="azure">
             <div class="section-header">
-                <h2>💙 Microsoft Azure</h2>
-                <p class="provider-desc">Multi-regional deployment with high availability</p>
+                <h2>Microsoft Azure</h2>
+                <p class="provider-desc">Multi-regional deployment with high availability and enterprise support</p>
             </div>
             <div class="voice-grid">
                 <div class="voice-card" onclick="selectVoice('hari', 'Hari - Male')">
@@ -280,6 +312,142 @@
                         <span class="tag">Emotional</span>
                     </div>
                     <button class="select-btn">Select & Edit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Architecture Section -->
+        <section id="technical-architecture" class="content-section info-section">
+            <div class="section-title">
+                <h2>Technical Architecture</h2>
+            </div>
+            <div class="info-content">
+                <div class="architecture-grid">
+                    <div class="architecture-box">
+                        <h3>🎙️ Frontend</h3>
+                        <p><strong>HTML5 | CSS3 | JavaScript</strong></p>
+                        <ul>
+                            <li>Voice gallery with 12 voices</li>
+                            <li>Interactive editor modal</li>
+                            <li>SSML conversion engine</li>
+                            <li>Responsive mobile design</li>
+                            <li>4 voice effect buttons</li>
+                        </ul>
+                    </div>
+                    <div class="architecture-box">
+                        <h3>⚙️ Backend</h3>
+                        <p><strong>Python Flask | Node.js Express</strong></p>
+                        <ul>
+                            <li>REST API endpoints</li>
+                            <li>Provider abstraction layer</li>
+                            <li>SSML validation</li>
+                            <li>CORS enabled</li>
+                            <li>Error handling & logging</li>
+                        </ul>
+                    </div>
+                    <div class="architecture-box">
+                        <h3>🌐 TTS Providers</h3>
+                        <p><strong>4 Major Providers</strong></p>
+                        <ul>
+                            <li>ElevenLabs - Premium quality</li>
+                            <li>Sarvam AI - Indian provider</li>
+                            <li>Google Cloud - Enterprise</li>
+                            <li>Microsoft Azure - Scalable</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="architecture-flow">
+                    <p><strong>Data Flow:</strong> User Input → SSML Conversion → Backend API → TTS Provider → MP3 Audio → Browser Player</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="content-section info-section">
+            <div class="section-title">
+                <h2>Pricing & Costs</h2>
+            </div>
+            <div class="info-content">
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>ElevenLabs</h3>
+                        <div class="price">Free Tier</div>
+                        <p>10,000 characters/month</p>
+                        <hr>
+                        <div class="price">Paid</div>
+                        <p>$5-99/month based on usage</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Sarvam AI</h3>
+                        <div class="price">Variable</div>
+                        <p>Based on usage</p>
+                        <hr>
+                        <p>Check their pricing dashboard for details</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Google Cloud</h3>
+                        <div class="price">Free Tier</div>
+                        <p>0-1M characters/month</p>
+                        <hr>
+                        <div class="price">Paid</div>
+                        <p>$16 per million characters</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Microsoft Azure</h3>
+                        <div class="price">Free Tier</div>
+                        <p>5 hours/month (F0)</p>
+                        <hr>
+                        <div class="price">Paid</div>
+                        <p>$1.00 per million characters</p>
+                    </div>
+                </div>
+                <div class="pricing-note">
+                    <p><strong>💡 Tip:</strong> Start with free tiers to test. Most providers offer free monthly quotas perfect for development and testing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section info-section">
+            <div class="section-title">
+                <h2>About This Project</h2>
+            </div>
+            <div class="info-content">
+                <div class="about-content">
+                    <div class="about-box">
+                        <h3>🎯 Purpose</h3>
+                        <p>This project provides an interactive platform to explore and test Hindi text-to-speech voices from multiple providers. Compare voice quality, apply special effects, and generate custom audio all in one place.</p>
+                    </div>
+                    <div class="about-box">
+                        <h3>✨ Features</h3>
+                        <ul>
+                            <li>12 professionally curated Hindi voices</li>
+                            <li>Real-time audio generation</li>
+                            <li>SSML markup support for voice effects</li>
+                            <li>File upload capability</li>
+                            <li>Mobile-responsive design</li>
+                            <li>Provider abstraction for easy switching</li>
+                        </ul>
+                    </div>
+                    <div class="about-box">
+                        <h3>🛠️ Built With</h3>
+                        <ul>
+                            <li>Frontend: Pure HTML5/CSS3/JavaScript (no frameworks)</li>
+                            <li>Backend: Python Flask or Node.js Express</li>
+                            <li>Hosting: GitHub Pages (frontend) + Render (backend)</li>
+                            <li>APIs: ElevenLabs, Sarvam AI, Google Cloud, Azure</li>
+                        </ul>
+                    </div>
+                    <div class="about-box">
+                        <h3>🚀 Getting Started</h3>
+                        <ol>
+                            <li>Select any voice from the gallery</li>
+                            <li>Enter Hindi text in the editor</li>
+                            <li>Optionally add voice effects</li>
+                            <li>Click "Generate Audio" to hear the result</li>
+                            <li>Use the audio preview player to listen</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
